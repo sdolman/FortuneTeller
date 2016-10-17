@@ -2,7 +2,7 @@ package calproject;
 
 import java.util.Scanner;
 
-public class FortuneTeller {
+public class CopyOfFortuneTeller {
 
 	public static void main(String[] args) {
 
@@ -18,9 +18,9 @@ public class FortuneTeller {
 		// Initialize String to compare user input to conditionals for loop
 		String answer = "foo"; //Give the String a value for methods later
 
-		boolean uPlay = true;
+		boolean uPlay = true; // Alternative: initialize uPlay as false in a do-while loop with while(uPlay)
 
-		while (uPlay) {
+		while(uPlay) {
 
 			// PART 1: User inputs
 			// Ask the user for the user’s first name
@@ -84,12 +84,6 @@ public class FortuneTeller {
 			if (answer.equalsIgnoreCase("Help")) {
 				System.out.println("[R] Red\n[O] Orange\n[Y] Yellow\n[G] Green\n[B] Blue\n[I] Indigo\n[V] Violet");
 				answer = sc.nextLine();
-				if (answer.equalsIgnoreCase("Restart")) {
-					continue;
-				}
-				if (answer.equalsIgnoreCase("Quit")) {
-					break;
-				}
 			}
 			char uColor = answer.toUpperCase().charAt(0);
 
@@ -208,7 +202,7 @@ public class FortuneTeller {
 			answer = sc.nextLine();
 			uPlay = (answer.toUpperCase().charAt(0) == 'Y' || answer.equalsIgnoreCase("Restart")); // assign true/false to uPlay
 
-		} // end of main loop
+		} // end of main loop. If do-while: while(uPlay);
 
 		// Close scanner
 		sc.close();
